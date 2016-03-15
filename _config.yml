@@ -1,0 +1,37 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink: pretty
+#relative_permalinks: false
+gems: [jekyll-paginate]
+
+title: Let's hack the Droid
+description: > # this means to ignore newlines until "baseurl:"
+  Just Do it =)
+baseurl: "" # the subpath of your site, e.g. /blog
+
+google_analytics:
+  account: UA-75078504-1
+
+# About/contact
+author:
+  name:              Maxim Golokhov
+  email:             hexwer@gmail.com
+
+github_username:  mgolokhov
+
+# Build settings
+markdown: kramdown
+# Custom vars
+version: 1.0.0
+
+
