@@ -15,6 +15,9 @@ In other words the adapter transforms your objects to something that can be view
 
 When you dig deeper into the API, you'll realise there are quite a few Adapter interfaces, abstract classes and implemented classes and it's a good idea to analyse it in conjunction with AdapterView hierarchy.
 
+
+<!-- <center><img src="{{ site.url }}/assets/adapter_hierarchy.png"/></center> -->
+
 ![smiley](https://cloud.githubusercontent.com/assets/294512/13728696/bb4b6f78-e931-11e5-8332-5c929153387a.png)
 ![smiley](https://cloud.githubusercontent.com/assets/294512/13730271/0dfcb450-e95c-11e5-9f31-8c9b344aa53c.png)
 

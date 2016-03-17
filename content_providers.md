@@ -11,7 +11,7 @@ Keep on reading, if you answered “yes” to any of these questions:
 * Would you like to implement App Widgets?
 * Do you want a fancy syncing and querying data with auto-UI update?
 
-![Content Provider]({{ site.url }}/assets/content_provider.png){: .center-image }
+<center><img src="{{ site.url }}/assets/content_provider.png"/></center>
 
 Are you still with me? The following text describes content providers in more detail.
 
@@ -22,18 +22,18 @@ To work with data you'll expect basic CRUD (create, retrieve, update, delete) op
 
 Pretty simple and staightforward so far. But how do cliens find provider? Well, it's required to know the URIs of a provider to access it. The recomendation is to publish public constants for the URIs and document them to other developers. The URI has following format:
 
-`prefix://authority/data_type/id`
+`scheme://authority/data_type/id`
 
 
 Yeah, Google likes URIs and URLs :) Here is the detail of various parts:
 
-* prefix - always set to `content://`
+* scheme - always set to `content://`
 
-* authority  - specifies the name of the content provider (e.g. contacts, browser)
+* authority  - a unique string used to locate your content provider and it should almost be a package name of your application, e.g. doit.study.droid.quizprovider
 
-* data_type  - indicates the type of data that this particular provider provides. For example, if you are getting all the contacts from the Contacts content provider, then the data path would be people and URI would look like this content://contacts/people
+* data_type  - indicates the type of data that this particular provider provides. For example, if you are getting all the topics from the Quiz content provider, then the data path would be topic and URI would look like this content://doit.study.droid.quizprovider/topic
 
-* id - specifies the specific record requested. For example, if you are looking for contact number 5 in the Contacts content provider then URI would look like this content://contacts/people/5
+* id - specifies the specific record requested. For example, if you are looking for topic number 5 in the Quiz content provider then URI would look like this content://doit.study.droid.quizprovider/topic/5
 
 Are you thrilled to write your own Content Provider? It's very easy if you have already put data in DB. Do simple steps:
 
