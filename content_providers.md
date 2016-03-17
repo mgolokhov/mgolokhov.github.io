@@ -35,6 +35,12 @@ Yeah, Google likes URIs and URLs :) Here is the detail of various parts:
 
 * id - specifies the specific record requested. For example, if you are looking for topic number 5 in the Quiz content provider then URI would look like this content://doit.study.droid.quizprovider/topic/5
 
+When a request is made via a ContentResolver the Andoid OS inspects the authority of the given URI and passes the request to the content provider registered with that authority (finds a match in the AndroidManifest.xml). The content provider can interpret the rest of the URI (`data_type/id`) however it wants. Actually, it can look like traditional URIs with keys and values `data_type/sub_type?key=value`. To make your life easier there is the [UriMatcher](http://developer.android.com/reference/android/content/UriMatcher.html) class that parses URIs. You will tied each URI type to the constant integer with method
+
+```java
+addURI(String authority, String path, int code)
+```
+
 Are you thrilled to write your own Content Provider? It's very easy if you have already put data in DB. Do simple steps:
 
 * extend ContentProvider base class
