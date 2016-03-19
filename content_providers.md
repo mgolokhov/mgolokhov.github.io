@@ -115,8 +115,6 @@ Here is the list of query methods you should override:
 
 Check <a href="/cursor_loader">the best friend of Content Provider</a>
 
-<!-- [djhfjd](/cursor_loader) -->
-
 
 
 
