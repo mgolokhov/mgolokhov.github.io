@@ -108,8 +108,14 @@ Here is the list of query methods you should override:
 		<td><a href="http://developer.android.com/reference/android/content/ContentProvider.html#getType(android.net.Uri)/">getType()</a>
 		</td>
 		<td>returns the MIME type of the data at the given URI. The returned type should start with vnd.android.cursor.item for a single record, or vnd.android.cursor.dir/ for multiple items</td>
-	</table>
+	</tr>
+</table>
 
+## Next
+
+Check <a href="/cursor_loader">the best friend of Content Provider</a>
+
+<!-- [djhfjd](/cursor_loader) -->
 
 
 
