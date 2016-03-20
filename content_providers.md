@@ -70,7 +70,7 @@ Are you thrilled to write your own Content Provider? It's very easy if you have 
 * extend ContentProvider base class
 * define your URI address
 * implement CRUD operations (override query methods)
-* register your Content Provider in your AndroidManifest.xml file using <provider> tag.
+* register your Content Provider in your AndroidManifest.xml file using &lt;provider&gt; tag.
 
 
 Here is the list of query methods you should override:

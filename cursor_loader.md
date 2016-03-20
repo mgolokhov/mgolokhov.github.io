@@ -21,8 +21,33 @@ LoaderManager is associated with an Activity or Fragment (host) for managing one
 
 Most often you are only interested in two methods of the manager:
 
-* initLoader
-* restartLoader
+* [`Loader<Cursor> initLoader (int id, Bundle args, LoaderCallbacks<Cursor> callback)`](http://developer.android.com/reference/android/app/LoaderManager.html#initLoader(int, android.os.Bundle, android.app.LoaderManager.LoaderCallbacks<D>))
+* [`Loader<Cursor> restartLoader (int id, Bundle args, LoaderCallbacks<Cursor> callback)`](http://developer.android.com/reference/android/app/LoaderManager.html#restartLoader(int, android.os.Bundle, android.app.LoaderManager.LoaderCallbacks<D>))
+
+# initLoader()
+
+This method will create a new Loader if it does not exist, otherwise re-use the last created with the same *id*. 
+As the name suggests the primary function is to initialize the loader. It also starts the loader if the activity/fragment is running (resumed).
+
+*int id* - a unique identifier for this loader.
+
+*Bundle args*  - optional arguments used only to construct a new loader.
+
+*LoaderCallbacks &lt;Cursor&gt; callback* - required interface used to report about changes in the state of the loader
+
+# restartLoader()
+
+Because Android doesn’t execute the query again, you need a way to re-initialize the Loader when data, that is used to build the query, changes. Typical examples are search queries. Arguments are the same as in initLoader()
+
+# Some key points
+
+With CursorLoader there is no need to explicitly close cursors.
+
+# References
+
+[http://www.androiddesignpatterns.com/2012/07/understanding-loadermanager.html](http://www.androiddesignpatterns.com/2012/07/understanding-loadermanager.html)
+
+[http://www.grokkingandroid.com/using-loaders-in-android/#how_to_deal_with_cursoradapters](http://www.grokkingandroid.com/using-loaders-in-android/#how_to_deal_with_cursoradapters)
 
 
 
