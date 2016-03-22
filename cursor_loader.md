@@ -65,5 +65,6 @@ This method allows you to release any resources you hold, so that the Loader can
 
 [http://www.grokkingandroid.com/using-loaders-in-android/#how_to_deal_with_cursoradapters](http://www.grokkingandroid.com/using-loaders-in-android/#how_to_deal_with_cursoradapters)
 
+[https://developer.android.com/guide/components/loaders.html](https://developer.android.com/guide/components/loaders.html)
 
 
