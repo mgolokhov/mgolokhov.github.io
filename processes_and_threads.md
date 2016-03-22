@@ -29,6 +29,16 @@ Variants:
 
 ### AsyncTask
 
+### HeandlerThread
+
+### Threadpools
+
+## Preferences
+
+[http://developer.android.com/guide/components/processes-and-threads.html](http://developer.android.com/guide/components/processes-and-threads.html)
+
+
+
 
 
 
