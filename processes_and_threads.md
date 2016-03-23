@@ -21,7 +21,7 @@ Developer can create other threads ("background" or "worker" threads).
 
 Variants:
 
-### Standart java SE threads + helper methods to post result in the UI thread
+### Standard Java SE threads + helper methods to post result in the UI thread
 
 * Activity.runOnUiThread(Runnable)
 * View.post(Runnable)
@@ -29,9 +29,19 @@ Variants:
 
 ### AsyncTask
 
+Gotchas:
+
+AsyncTasks are executed serially on a single background thread ([from API 11](http://developer.android.com/reference/android/os/AsyncTask.html#execute(Params...))). So long running worker can block others.
+
+Declaration as an inner class in an activity/fragment is a bad idea, because it creates an implicit reference to the outer class, which can then result in leaked memory.
+
+AsyncTask tied to the lifecycle of its process, as the result can post results to the destroyed activity/fragment.
+
 ### HeandlerThread
 
 ### Threadpools
+
+-----------
 
 ## Preferences
 
