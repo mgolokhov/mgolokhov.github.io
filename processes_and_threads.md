@@ -29,13 +29,21 @@ Variants:
 
 ### AsyncTask
 
+<center><img src="{{ site.url }}/assets/async_task.png"/></center>
+
 Gotchas:
+
+AsyncTask should only be used for tasks/operations that take quite few seconds.
 
 AsyncTasks are executed serially on a single background thread ([from API 11](http://developer.android.com/reference/android/os/AsyncTask.html#execute(Params...))). So long running worker can block others.
 
 Declaration as an inner class in an activity/fragment is a bad idea, because it creates an implicit reference to the outer class, which can then result in leaked memory.
 
 AsyncTask tied to the lifecycle of its process, as the result can post results to the destroyed activity/fragment.
+
+The task can be executed only once or you'll get an exception.
+
+
 
 ### HeandlerThread
 
@@ -46,6 +54,8 @@ AsyncTask tied to the lifecycle of its process, as the result can post results t
 ## Preferences
 
 [http://developer.android.com/guide/components/processes-and-threads.html](http://developer.android.com/guide/components/processes-and-threads.html)
+
+[http://developer.android.com/reference/android/os/AsyncTask.html](http://developer.android.com/reference/android/os/AsyncTask.html)
 
 
 
