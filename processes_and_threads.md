@@ -19,7 +19,7 @@ Andoid UI toolkit is not thread-safe (don't access the UI from outside the UI th
 
 Developer can create other threads ("background" or "worker" threads).
 
-For really long running operations use service, because it has higher priority then activity [1](http://developer.android.com/guide/components/processes-and-threads.html#Lifecycle).
+For really long running operations use service, because it has higher priority (later in killing order list) then activity [[1]](http://developer.android.com/guide/components/processes-and-threads.html#Lifecycle).
 
 Variants:
 
@@ -39,12 +39,13 @@ AsyncTask should only be used for tasks/operations that take quite few seconds.
 
 AsyncTasks are executed serially on a single background thread ([from API 11](http://developer.android.com/reference/android/os/AsyncTask.html#execute(Params...))). So long running worker can block others.
 
-Declaration as an inner class in an activity/fragment is a bad idea, because it creates an implicit reference to the outer class, which can then result in leaked memory.
+Declaration as an inner class in an activity/fragment can lead to memory leak, because it creates an implicit reference to the outer class.
 
 AsyncTask tied to the lifecycle of its process, as the result can post results to the destroyed activity/fragment.
 
 The task can be executed only once or you'll get an exception.
 
+AsyncTask.cancel() doesn't kill the Thread with no regard for the consequences. All it does is set the AsyncTask to a “cancelled” state.
 
 
 ### HeandlerThread
