@@ -19,6 +19,8 @@ Andoid UI toolkit is not thread-safe (don't access the UI from outside the UI th
 
 Developer can create other threads ("background" or "worker" threads).
 
+For really long running operations use service, because it has higher priority then activity [1](http://developer.android.com/guide/components/processes-and-threads.html#Lifecycle).
+
 Variants:
 
 ### Standard Java SE threads + helper methods to post result in the UI thread
@@ -56,6 +58,8 @@ The task can be executed only once or you'll get an exception.
 [http://developer.android.com/guide/components/processes-and-threads.html](http://developer.android.com/guide/components/processes-and-threads.html)
 
 [http://developer.android.com/reference/android/os/AsyncTask.html](http://developer.android.com/reference/android/os/AsyncTask.html)
+
+[http://blog.danlew.net/2014/06/21/the-hidden-pitfalls-of-asynctask/](http://blog.danlew.net/2014/06/21/the-hidden-pitfalls-of-asynctask/)
 
 
 
