@@ -7,21 +7,23 @@ Android uses Linux processes with the single thread of execution, "main" thread 
 
 By default, all components of the same application starts and live in this thread.
 
+Every widget-based UI modification goes through a message queue. When you use callbackes like onCreate() or onClick(), your code executed on the main thead, Android isn't processing message queue, sceen does not update, you see on logcat "Skipped xx frames! The application may be doing too much work on its main thread." After 5 sec of long running operation in UI thread user gets  "application not responding" (ANR).
+
 Default behavior can be change in manifest (with android:process).
 
 Even components from different applications can share one process.
 
-Android OS cannot kill Activities, but might shut down a process at some point (ex. low memory). 
+At "low memory" situations Adroid OS doesn't kill Activities, but shut down processes.
 
-Long running operations can block UI thread as the result after 5 sec user gets  "application not responding" (ANR).
+Starting and communicating between processes is slow, and not an efficient way of achieving asynchronous execution. To achieve higher throughput and better performance, an application should utilize multiple threads within each process.
 
-Andoid UI toolkit is not thread-safe (don't access the UI from outside the UI thread)
+A developer has multiple choices create other threads ("background" or "worker" threads).
 
-Developer can create other threads ("background" or "worker" threads).
+Andoid UI toolkit is not thread-safe (don't access the UI from outside the UI thread).
 
 For really long running operations use service, because it has higher priority (later in killing order list) then activity [[1]](http://developer.android.com/guide/components/processes-and-threads.html#Lifecycle).
 
-Variants:
+## Choices:
 
 ### Standard Java SE threads + helper methods to post result in the UI thread
 
