@@ -13,13 +13,13 @@ Default behavior can be change in manifest (with android:process).
 
 Even components from different applications can share one process.
 
-At "low memory" situations Adroid OS doesn't kill Activities, but shut down processes.
+At "low memory" situations Adroid OS doesn't kill Activities, but shuts down processes.
 
 Starting and communicating between processes is slow, and not an efficient way of achieving asynchronous execution. To achieve higher throughput and better performance, an application should utilize multiple threads within each process.
 
 A developer has multiple choices create other threads ("background" or "worker" threads).
 
-Andoid UI toolkit is not thread-safe (don't access the UI from outside the UI thread).
+Android UI toolkit is not thread-safe (don't access the UI from outside the UI thread).
 
 For really long running operations use service, because it has higher priority (later in killing order list) then activity [[1]](http://developer.android.com/guide/components/processes-and-threads.html#Lifecycle).
 
@@ -52,6 +52,10 @@ It's up to the developer of AsyncTask to adhere cancel state.
 
 ### HeandlerThread
 
+HandlerThread is a thread with a message queue that incorporates a Thread, a Looper, and a MessageQueue. It is constructed and started in the same way as a Thread. Once it is started, HandlerThread sets up queuing through a Looper and MessageQueue and then waits for incoming messages to process.
+
+<center><img src="{{ site.url }}/assets/handler.png"/></center>
+
 ### Threadpools
 
 -----------
@@ -63,6 +67,8 @@ It's up to the developer of AsyncTask to adhere cancel state.
 [http://developer.android.com/reference/android/os/AsyncTask.html](http://developer.android.com/reference/android/os/AsyncTask.html)
 
 [http://blog.danlew.net/2014/06/21/the-hidden-pitfalls-of-asynctask/](http://blog.danlew.net/2014/06/21/the-hidden-pitfalls-of-asynctask/)
+
+[http://codetheory.in/android-handlers-runnables-loopers-messagequeue-handlerthread/](http://codetheory.in/android-handlers-runnables-loopers-messagequeue-handlerthread/)
 
 
 
