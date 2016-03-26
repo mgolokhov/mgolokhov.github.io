@@ -48,7 +48,7 @@ AsyncTask tied to the lifecycle of its process, as the result can post results t
 The task can be executed only once or you'll get an exception.
 
 AsyncTask.cancel() doesn't kill the Thread with no regard for the consequences. All it does is set the AsyncTask to a “cancelled” state.
-
+It's up to the developer of AsyncTask to adhere cancel state.
 
 ### HeandlerThread
 
