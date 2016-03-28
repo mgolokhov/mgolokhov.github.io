@@ -17,13 +17,22 @@ At "low memory" situations Adroid OS doesn't kill Activities, but shuts down pro
 
 Starting and communicating between processes is slow, and not an efficient way of achieving asynchronous execution. To achieve higher throughput and better performance, an application should utilize multiple threads within each process.
 
-A developer has multiple choices create other threads ("background" or "worker" threads).
+A developer has multiple choices to create other threads ("background" or "worker" threads).
 
 Android UI toolkit is not thread-safe (don't access the UI from outside the UI thread).
 
 For really long running operations use service, because it has higher priority (later in killing order list) then activity [[1]](http://developer.android.com/guide/components/processes-and-threads.html#Lifecycle).
 
-## Choices:
+For a task "fire and forget" all is prуtty easy, real fun comes with thread communication. The regular Java mechanisms - pipes, shared memory, blocking queues - are available to Android applications but impose problems for the UI thread because of their tendancy to block. Hence, the Android platform defines its own message passing mechanism with nonblocking consumer-producer pattern.
+The pattern is made from four main ingredients: Handler, Looper, MessageQueue and Messages/Runnables. 
+
+You may associate a Looper, which contains a MessageQueue, with a thread [[how]](http://developer.android.com/reference/android/os/Looper.html)(UI thread and HeandlerThread already have one). Most interaction with a message loop is through the Handler class, which provides interface for posting messages. When you create a new Handler, it is bound to the thread and message queue of the thread that is creating it.
+
+Producers send Messages or Runnables through Handler, which inserts them in the MessageQueue. The Looper (runs in the consumer thread) recieves messages in a sequentional order (by timestamp) and dispatches them to the correct Handler. In other words true work happens in the consumer thread and in the producers thread we use interface to form and send messages. 
+
+<center><img src="{{ site.url }}/assets/handler.png"/></center>
+
+## How to hand off tasks to the background?
 
 ### Standard Java SE threads + helper methods to post result in the UI thread
 
@@ -54,7 +63,7 @@ It's up to the developer of AsyncTask to adhere cancel state.
 
 HandlerThread is a thread with a message queue that incorporates a Thread, a Looper, and a MessageQueue. It is constructed and started in the same way as a Thread. Once it is started, HandlerThread sets up queuing through a Looper and MessageQueue and then waits for incoming messages to process.
 
-<center><img src="{{ site.url }}/assets/handler.png"/></center>
+
 
 ### Threadpools
 
