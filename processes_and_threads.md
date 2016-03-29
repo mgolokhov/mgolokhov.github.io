@@ -13,7 +13,7 @@ Default behavior can be change in manifest (with android:process).
 
 Even components from different applications can share one process.
 
-At "low memory" situations Adroid OS doesn't kill Activities, but shuts down processes.
+At "low memory" situations Android OS doesn't kill Activities, but shuts down processes.
 
 Starting and communicating between processes is slow, and not an efficient way of achieving asynchronous execution. To achieve higher throughput and better performance, an application should utilize multiple threads within each process.
 
@@ -23,7 +23,7 @@ Android UI toolkit is not thread-safe (don't access the UI from outside the UI t
 
 For really long running operations use service, because it has higher priority (later in killing order list) then activity [[1]](http://developer.android.com/guide/components/processes-and-threads.html#Lifecycle).
 
-For a task "fire and forget" all is prуtty easy, real fun comes with thread communication. The regular Java mechanisms - pipes, shared memory, blocking queues - are available to Android applications but impose problems for the UI thread because of their tendancy to block. Hence, the Android platform defines its own message passing mechanism with nonblocking consumer-producer pattern.
+For a task "fire and forget" all is pretty easy, real fun comes with thread communication. The regular Java mechanisms - pipes, shared memory, blocking queues - are available to Android applications but impose problems for the UI thread because of their tendancy to block. Hence, the Android platform defines its own message passing mechanism with nonblocking consumer-producer pattern.
 The pattern is made from four main ingredients: Handler, Looper, MessageQueue and Messages/Runnables. 
 
 You may associate a Looper, which contains a MessageQueue, with a thread [[how]](http://developer.android.com/reference/android/os/Looper.html)(UI thread and HeandlerThread already have one). Most interaction with a message loop is through the Handler class, which provides interface for posting messages. When you create a new Handler, it is bound to the thread and message queue of the thread that is creating it.
