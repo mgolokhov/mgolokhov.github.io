@@ -54,7 +54,7 @@ Declaration as an inner class in an activity/fragment can lead to memory leak, b
 
 AsyncTask tied to the lifecycle of its process, as the result can post results to the destroyed activity/fragment.
 
-The task can be executed only once or you'll get an exception.
+As well as Thread cannot be reused after the job is completed, AsyncTask is one-shot task or you'll get an exception.
 
 AsyncTask.cancel() doesn't kill the Thread with no regard for the consequences. All it does is set the AsyncTask to a “cancelled” state.
 It's up to the developer of AsyncTask to adhere cancel state.
@@ -74,6 +74,8 @@ HandlerThread is a thread with a message queue that incorporates a Thread, a Loo
 [http://developer.android.com/guide/components/processes-and-threads.html](http://developer.android.com/guide/components/processes-and-threads.html)
 
 [http://developer.android.com/reference/android/os/AsyncTask.html](http://developer.android.com/reference/android/os/AsyncTask.html)
+
+[https://blog.nikitaog.me/2014/10/11/android-looper-handler-handlerthread-i/](https://blog.nikitaog.me/2014/10/11/android-looper-handler-handlerthread-i/)
 
 [http://blog.danlew.net/2014/06/21/the-hidden-pitfalls-of-asynctask/](http://blog.danlew.net/2014/06/21/the-hidden-pitfalls-of-asynctask/)
 
