@@ -3,8 +3,15 @@ layout: default
 title: Home
 ---
 
-## Topics
+Do you want a better understanding of Android system?
 
-* [Adapter Internals](/adapter_internals)
-* [Content Providers](/content_providers)
-* [SQLite gotchas](/sqlite_gotchas)
+Here you can find tips and tricks, gotchas and recommendations. 
+
+To test your knowledge try [DoDroid](https://github.com/mgolokhov/dodroid).
+
+
+
+### Find a typo?
+
+Submit a pull request! The code powering this site is open-source and available on [GitHub](https://github.com/mgolokhov/mgolokhov.github.io). Corrections are appreciated and encouraged! 
+

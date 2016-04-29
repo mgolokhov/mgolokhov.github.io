@@ -1,6 +1,7 @@
 ---
 layout: page
 title: SQLite gotchas
+position: 1
 ---
 
 Here I would like to bookmark some tricky parts:

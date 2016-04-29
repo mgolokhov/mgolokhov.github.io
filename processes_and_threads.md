@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Processes and threads
+position: 1
 ---
 
 Android uses Linux processes with the single thread of execution, "main" thread (UI thread).

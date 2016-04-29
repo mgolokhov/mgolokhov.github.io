@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Batch operations for Content Provider
+position: 6
 ---
 
 [http://www.grokkingandroid.com/better-performance-with-contentprovideroperation/](http://www.grokkingandroid.com/better-performance-with-contentprovideroperation/)

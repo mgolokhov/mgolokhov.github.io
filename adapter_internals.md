@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Adapter Internals
+position: 3
 ---
 
 First of all an adapter is a software design pattern that allows the interface of an existing class to be used from another interface. The adapter helps two incompatible interfaces to work together, so existing class works with others without modifying their source code.

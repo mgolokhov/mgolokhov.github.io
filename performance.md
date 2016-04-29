@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Performance
+position: 7
 ---
 
 [Should I use enums in Android?](https://trevore.com/post/should-I-use-enums-in-Android)

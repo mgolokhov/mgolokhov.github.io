@@ -1,6 +1,7 @@
 ---
 layout: default
 title:  Cursor Loaders
+position: 6
 ---
 
 # Cursor Loaders

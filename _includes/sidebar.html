@@ -1,10 +1,15 @@
 <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
      styles, `#sidebar-checkbox` for behavior. -->
-<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+<!-- <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox"> -->
+
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" checked>
 
 <!-- Toggleable sidebar -->
 <div class="sidebar" id="sidebar">
   <div class="sidebar-item">
+  <a href="http://stackoverflow.com/users/5766983/maxim-g">
+    <img src="http://stackoverflow.com/users/flair/5766983.png?theme=dark" width="208" height="58" alt="profile for Maxim G at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Maxim G at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+    </a>
     <p>{{ site.description }}</p>
   </div>
 
@@ -16,7 +21,7 @@
       `layout: page` in the front-matter. See readme for usage.
     {% endcomment %}
 
-    {% assign pages_list = site.pages | sort:"url" %}
+    {% assign pages_list = site.pages | sort:"position" %}
     {% for node in pages_list %}
       {% if node.title != null %}
         {% if node.layout == "page" %}
@@ -25,11 +30,10 @@
       {% endif %}
     {% endfor %}
 
+    <a class="sidebar-nav-item" href="https://github.com/mgolokhov/dodroid">DoDroid project</a>
+
   </nav>
 
-  <div class="sidebar-item">
-    <p>
-      &copy; {{ site.time | date: '%Y' }}. All rights reserved.
-    </p>
-  </div>
 </div>
+
+
